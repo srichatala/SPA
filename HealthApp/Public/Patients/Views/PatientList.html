@@ -1,0 +1,33 @@
+﻿<table class="table">
+    <tr>
+        <td><b>Search with first name:</b></td>
+        <td><input ng-model="query" class="form-control" /> </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Sort by:</b>
+        </td>
+        <td>
+            <select class="form-control" ng-model="orderProp">
+                <option value="fname">First Name</option>
+                <option value="lname">Last Name</option>
+            </select>
+        </td>
+    </tr>
+</table>
+<table class="table">
+    <tr ng-repeat="patientModel in patientModels | filter:query | orderBy:orderProp">
+        <td>
+            <label class="active">First Name:</label> {{patientModel.fname}}<br />
+            <label class="active">Last Name:</label> {{patientModel.lname}}<br />
+            <label class="active">Phone Number:</label> {{patientModel.pnumber}}<br />
+            <label class="active">Last Visit Date:</label>{{patientModel.lvdate}}<br />
+            <label class="active">Status:</label>{{patientModel.status}}
+
+        </td>
+        <td>
+            <button class="btn btn-danger" ng-click="delete(patientModel._id)">Remove</button>
+            <!--<button class="btn btn-warning" ng-click="select(serverClient._id)">Select</button>-->
+        </td>
+    </tr>
+</table>

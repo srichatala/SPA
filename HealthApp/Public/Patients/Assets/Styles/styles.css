@@ -1,0 +1,58 @@
+﻿form[novalidate] input {
+    border-left-width: 8px;
+    border-color: #3498db;
+    border-style: solid;
+}
+
+input[required].ng-pristine {
+    border-color: #e74c3c;
+}
+
+input.ng-pristine.ng-dirty {
+    border-color: #e74c3c;
+}
+
+input.ng-valid.ng-dirty {
+    border-color: #23cc71;
+}
+img {
+    width:100%;
+    height:280px;
+}
+.navbar-custom {
+	background-color:#49013b;
+    color:#ffffff;
+  	border-radius:0;
+}
+  
+.navbar-custom .navbar-nav > li > a {
+  	color:#fff;
+  	padding-left:20px;
+  	padding-right:20px;
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+	background-color:transparent;
+}
+      
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #20275b;
+}
+.navbar-custom .icon-bar {
+  	background-color:#20275b;
+}
+#footer {
+    background-color:#2e0126;
+    color:#fff;
+}
+.patientupdate {
+    float:right;
+    width:50%;
+}
+.patient_info {
+    float:left;
+    width:50%;
+    overflow-y:scroll;
+    height:430px;
+}

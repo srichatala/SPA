@@ -1,0 +1,87 @@
+﻿<div class="container">
+    <div class="patient_info">
+        <table class="table">
+            <tr>
+                <td><b>Search with first name:</b></td>
+                <td><input ng-model="query" class="form-control" /> </td>
+            </tr>
+            <tr ng-repeat="patientModel in patientModels | filter:query ">
+                <td>
+                    <label class="active">First Name:</label> {{patientModel.fname}}<br />
+                    <label class="active">Last Name:</label> {{patientModel.lname}}<br />
+                    <label class="active">Phone Number:</label> {{patientModel.pnumber}}<br />
+                    <label class="active">Last Visit Date:</label>{{patientModel.lvdate}}<br />
+                    <label class="active">Status:</label>{{patientModel.status}}
+
+                </td>
+                <td>
+                    <!--<button class="btn btn-danger" ng-click="delete(serverClient._id)">Remove</button>-->
+                    <button class="btn btn-warning" ng-click="select(patientModel._id)">Select</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="patientupdate">
+        <form name="myForm"  novalidate>
+            <table class="table table-bordered">
+                <tr>
+                    <th colspan="2">
+                        <h3>Patient Information</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fname">First Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="fname" class="form-control" ng-pattern="/^[A-Z][a-zA-Z 0-9]*$/" ng-model="patientModel.fname" required />
+                        <span ng-show="myForm.fname.$error.pattern">First Name Starts with capital letter</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="lname">Last Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="lname" class="form-control" ng-pattern="/^[A-Z][a-zA-Z0-9]*$/" ng-model="patientModel.lname" required />
+                        <span ng-show="myForm.lname.$error.pattern">First Name Starts with capital letter</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phoneno">Phone Number:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="phoneno" class="form-control" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-s.]{0,1}[0-9]{3}[-s.]{0,1}[0-9]{4}$/" ng-model="patientModel.pnumber" required />
+                        <span ng-show="myForm.phoneno.$error.pattern">Enter valid phone number</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="lvdate">Last Visit Date:</label>
+                    </td>
+                    <td>
+                        <input class="form-control" type="date" ng-model="patientModel.lvdate" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="lvdate">Status:</label>
+                    </td>
+                    <td>
+                        <div class="btn-group" data-toggle="buttons-radio">
+                            <input type="radio" value="active" ng-model="patientModel.status" /> Active
+                            <input type="radio" value="inactive" ng-model="patientModel.status" />InActive
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="btn btn-primary" ng-disabled="myFrom.$invalid" ng-click="update()">Update</button><br />
+                        <h3>{{message}}</h3>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

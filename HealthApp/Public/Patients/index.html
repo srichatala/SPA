@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Patient Management System</title>
+    <link href="Assets/Styles/bootstrap.css" rel="stylesheet" />
+    <link href="Assets/Styles/styles.css" rel="stylesheet" />
+</head>
+<body ng-app="patientApp">
+    <div class="container">
+        <header>
+            <img src="Assets/Images/banner2.jpg" />
+            <nav class="navbar navbar-custom navbar-static-top">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><b>Patient Registration</b> </a></li>
+                        <li><a href="#patientdetails"><b>Patient Details</b></a></li>
+                        <li><a href="#patientslist"><b>Patients List</b></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div ng-view>
+
+        </div>
+        <footer id="footer">
+            <div class="modal-footer">
+                Copyright © 2014 — 2015 Village World Corp. All rights reserved.
+            </div>
+        </footer>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="Data/app.js"></script>
+</body>
+</html>
